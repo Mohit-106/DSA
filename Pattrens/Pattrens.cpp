@@ -1,10 +1,10 @@
-// step1:- count no of spaces and star in first row for multiple test cases and then assise a general values for nsp and nst.
+// step1:- count no of spaces and star in first row for multiple test cases and then assign a general values for nsp and nst.
 // Step2:- identify the relation between 1st and 2nd row and write code accordingly.
 // step3:- Now increment and decrement the value of nsp and nst and print star and spaces.
 
+
 #include <bits/stdc++.h>
 using namespace std;
-
 #define ll long long
 
 void pattren1234(int n)
@@ -28,6 +28,7 @@ void pattren1234(int n)
         cout << endl;
     }
 }
+
 
 void pattren5(int n)
 {
@@ -60,6 +61,7 @@ void pattren5(int n)
         cout << endl;
     }
 }
+
 
 void pattren6(int n)
 {
@@ -94,6 +96,7 @@ void pattren6(int n)
     }
 }
 
+
 //Alternative
 //can be done by gap star strategy
 void pattren7(int row)
@@ -114,6 +117,7 @@ void pattren7(int row)
     }
 }
 
+
 void pattren8(int n)
 {
 
@@ -132,6 +136,7 @@ void pattren8(int n)
     }
 }
 
+
 void pattren9(int n)
 {
 
@@ -149,6 +154,7 @@ void pattren9(int n)
         cout << endl;
     }
 }
+
 
 //alternative approach
 
@@ -192,6 +198,7 @@ void pattren9a(int n)
     }
 }
 
+
 void pattren10(int n)
 {
 
@@ -230,6 +237,8 @@ void pattren10(int n)
         cout << endl;
     }
 }
+
+
 void pattren12(int n)
 {
     int nst = 1, val1 = 0, val2 = 1, val3 = 0;
@@ -251,6 +260,7 @@ void pattren12(int n)
     }
 }
 
+
 void pattren13(int row)
 {
 
@@ -265,6 +275,7 @@ void pattren13(int row)
         cout << endl;
     }
 }
+
 
 void pattren10a(int n)
 {
