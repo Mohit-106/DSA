@@ -15,6 +15,8 @@ int b1BaseToDecimal(int n, int b1){
 
 }
 
+
+
 int DecimalofBaseb1ToBaseb2(int n2, int b2){
     int ans=0, rem, pow=1;
 
@@ -45,3 +47,6 @@ int main(){
 
     return 0;
 }
+
+// we have to convert first in decimal then to required base this is because when we input
+// in any base our compiler read it in decimal only (/,*,%,+- these are made to orerate on decimal system only)
