@@ -44,7 +44,7 @@ int BinaryAddition(int n, int m){
 
 int AnyBaseAddition(int n, int m, int b){
 
-     int carry=0, pow=1, sum, ans=0;
+    int carry=0, pow=1, sum, ans=0;
     while(n!=0 || m!=0 || carry!=0){
 
         sum= n%10 + m%10 + carry;
