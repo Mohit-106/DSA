@@ -38,28 +38,6 @@ int MaxNo(vector<int>&arr){
 
 }
 
-void BarChart(vector<int>&arr){
-    int n=arr.size();
-
-    int rowNo=MaxNo(arr);
-    int colNo=n;
-
-    int val=rowNo;
-
-    for(int r=1;r<=rowNo;r++){
-
-        for(int c=0;c<colNo;c++){
-            if(val>=arr[c]){
-                cout<<"*\t";
-            }else{
-                cout<<"\t";
-            }
-        }
-        val--;
-        cout<<endl;
-
-    }
-}
 
 void Reverse(vector<int>&arr){
 
@@ -84,9 +62,9 @@ int main(){
         cin>>arr[i];
     }
 
-    // BarChart(arr);
 
-    // cout<<SpanofArray(arr)<<endl;
+
+    cout<<SpanofArray(arr)<<endl;
 
     Reverse(arr);
     
