@@ -15,7 +15,7 @@ Node *newNode(int val)
     return node;
 }
 // Tree Constructor
-Node *Constructor(vector<int> arr, int n)
+Node *Constructor(vector<int> &arr, int n)
 {
     Node *root = NULL;
     stack<Node *> st;
