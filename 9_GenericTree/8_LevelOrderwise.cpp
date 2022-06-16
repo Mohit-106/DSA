@@ -7,14 +7,17 @@ struct Node
 };
 
 Node *newNode(int key)
-{
+{  
+
   Node *temp = new Node;
   temp->data = key;
   return temp;
+
 }
 
 Node *construct(int arr[], int n)
 {
+
   Node *root = NULL;
   stack<Node *> st;
   for (int i = 0; i < n; i++)
@@ -38,6 +41,7 @@ Node *construct(int arr[], int n)
     }
   }
   return root;
+  
 }
 
 void levelorder(Node *node)

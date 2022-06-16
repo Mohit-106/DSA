@@ -75,7 +75,7 @@ vector<int> nodeToRootPath(Node* node, int data)
             return carr;
         }
     }
-    vector<int>ans;
+    vector<int>ans;   // this is a false case where no element in found
     return ans;
 
 }

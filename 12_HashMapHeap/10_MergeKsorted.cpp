@@ -3,6 +3,7 @@ using namespace std;
 typedef pair<int, pair<int, int>> ppi; //1->data,2->list number,3->index in current list
 vector<int> mergeKSortedLists(vector<vector<int>> &lists)
 {
+    
     vector<int> rv;
     priority_queue<ppi, vector<ppi>, greater<ppi>> pq;
     for (int i = 0; i < lists.size(); i++)

@@ -36,7 +36,7 @@ public:
     }
 };
 
-struct comp
+class comp
 {
 public:
     bool operator()(Pair const &a, Pair const &b) const

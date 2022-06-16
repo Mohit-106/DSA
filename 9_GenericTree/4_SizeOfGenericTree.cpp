@@ -55,26 +55,24 @@ void display(Node *node)
     }
 }
 
-int size(Node *node)
+int size(Node *root)
 {
-    int sz = 0;
-    for (Node *val : node->children)
-    {
-        int csz = size(val);
-        sz = sz + csz;
-    }
-    sz = sz + 1;
-    return sz;
-}
 
-//lerning from this question-> loops are not dynamic while recursive call is//
-//IMPORTANT CONCEPT//
+    int sz = 0;
+    for (Node *child : root->children)
+    {
+        sz += size(child);
+    }
+    return sz + 1;
+}
+// lerning from this question-> loops are not dynamic while recursive call is//
+// IMPORTANT CONCEPT//
 int sizeByloop(Node *node)
 {
     int sz = 0;
     for (Node *val : node->children)
     {
-        //int csz= size(val);
+        // int csz= size(val);
         int csz = 0;
 
         for (Node *val2 : val->children)
@@ -84,9 +82,31 @@ int sizeByloop(Node *node)
         sz = sz + csz + 1;
     }
     return sz + 1;
-    //This code will not work for tree having height more than 2(in terms of edges)
-    //Because it has only 2 nested loop and allow go deep upto 2 height
-    // IN case of recursive solution we can go deep as much as possible.
+    // This code will not work for tree having height more than 2(in terms of edges)
+    // Because it has only 2 nested loop and allow go deep upto 2 height
+    //  IN case of recursive solution we can go deep as much as possible.
+}
+
+int s(Node *root)
+{
+    int sum = 0;
+    sum += root->data;
+    for (Node *child : root->children)
+    {
+        sum += s(child);
+    }
+    return sum;
+}
+int s2(Node *root)
+{
+
+    int sum = 0;
+    for (Node *child : root->children)
+    {
+        sum += s2(child);
+    }
+    sum += root->data;
+    return sum;
 }
 
 int main()
@@ -101,7 +121,9 @@ int main()
         cin >> arr[i];
     }
     Node *root = construct(arr, n);
-    int sz = size(root);
-    cout << sz << endl;
-    //display(root);
+    int sz = s(root);
+    int sz2 = s2(root);
+
+    cout << sz << " " << sz2 << endl;
+    // display(root);
 }

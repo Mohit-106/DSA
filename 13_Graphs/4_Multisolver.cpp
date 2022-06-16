@@ -76,11 +76,9 @@ void multisolver(vector<Edge> graph[], int src, int dst, vector<bool> visited, i
         {
 
             pq.pop();
-            pq.push({wsf,psf});
-
-
+            pq.push({wsf, psf});
         }
-        
+
         return;
     }
     visited[src] = true;

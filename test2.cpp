@@ -1,75 +1,102 @@
-#include <bits/stdc++.h>
-using namespace std;
+// import java.util.Arrays;
 
-struct StudentRec
-{
+// public class l001 {
+//     public int numDecodings_memo(String s, int idx, int[] dp) {
+//         if (idx == s.length()) {
+//             return dp[idx] = 1;
+//         }
 
-    int *enrolNo;
-    float *CGPA;
-    string *branch;
+//         if (dp[idx] != -1) {
+//             return dp[idx];
+//         }
 
-    void arrays()
-    {
+//         char ch1 = s.charAt(idx);
+//         int count = 0;
+//         if (ch1 != '0') {
+//             count += numDecodings_memo(s, idx + 1, dp);
 
-        this->enrolNo = new int[3];
-        this->CGPA = new float[3];
-        this->branch = new string[3];
-    }
+//             if (idx < s.length() - 1) {
+//                 int num = (ch1 - '0') * 10 + (s.charAt(idx + 1) - '0');
+//                 if (num <= 26)
+//                     count += numDecodings_memo(s, idx + 2, dp);
+//             }
+//         }
+//         return dp[idx] = count;
+//     }
 
-    void setData()
-    {
-        for (int i = 0; i < 3; i++)
-        {
+//     public int numDecodings_tabu(String s, int IDX, int[] dp) {
+//         for (int idx = s.length(); idx >= 0; idx--) {
+//             if (idx == s.length()) {
+//                 dp[idx] = 1;
+//                 continue;
+//             }
 
-            cin >> enrolNo[i];
-            cin >> CGPA[i];
-            cin>>branch[i];
-        }
-    }
+//             char ch1 = s.charAt(idx);
+//             int count = 0;
+//             if (ch1 != '0') {
+//                 count += dp[idx + 1];
 
-    void sort()
-    {
-        int i, j, temp;
-        for (i = 0; i <3; i++)
-            for (j = i + 1; j < 3; j++)
-                if (CGPA[i] > CGPA[j])
-                {
-                    float temp = CGPA[i];
-                    CGPA[i] = CGPA[j];
-                    CGPA[j] = temp;
+//                 if (idx < s.length() - 1) {
+//                     int num = (ch1 - '0') * 10 + (s.charAt(idx + 1) - '0');
+//                     if (num <= 26)
+//                         count += dp[idx + 2];
+//                 }
+//             }
+//             dp[idx] = count;
+//         }
 
-                    int temp1 = enrolNo[i];
-                    enrolNo[i] = enrolNo[j];
-                    enrolNo[j] = temp1;
+//         return dp[IDX];
+//     }
 
-                    string temp2 = branch[i];
-                    branch[i]=branch[j];
-                    branch[j]=temp2;
+//     public int numDecodings_opti(String s) {
+//         int a = 1, b = 0;
+//         for (int idx = s.length() - 1; idx >= 0; idx--) {
+//             char ch1 = s.charAt(idx);
+//             int count = 0;
+//             if (ch1 != '0') {
+//                 count += a;
 
-                }
-    }
+//                 if (idx < s.length() - 1) {
+//                     int num = (ch1 - '0') * 10 + (s.charAt(idx + 1) - '0');
+//                     if (num <= 26)
+//                         count += b;
+//                 }
+//             }
+//             b = a;
+//             a = count;
+//         }
 
-    void display(){
-        for(int i=0;i<3;i++){
-            cout<<enrolNo[i]<<endl<<CGPA[i]<<endl<<branch[i]<<endl;
-            cout<<endl;
-        }
-    }
+//         return a;
+//     }
 
-};
+//     public int numDecodings(String s) {
+//         int n = s.length();
+//         int[] dp = new int[n + 1];
+//         Arrays.fill(dp, -1);
 
-int main()
-{
+//         return numDecodings_memo(s, 0, dp);
+//     }
 
-    StudentRec *student = new StudentRec();
-    student->arrays();
-    student->setData();
-    cout<<"Unsorted Data"<<endl;
-    student->display();
-    student->sort();
-    cout<<"Sorted Data"<<endl;
-    student->display();
-    
+//     public int rob_memo(int[] nums, int idx, int[] dp) {
+//         if (idx == nums.length) {
+//             return dp[idx] = 0;
+//         }
+//         if (dp[idx] != -1)
+//             return dp[idx];
 
-    return 0;
-}
+//         int robThatHouse = nums[idx] + (idx + 2 > nums.length ? 0 : rob_memo(nums, idx + 2, dp));
+//         int notRobThatHouse = rob_memo(nums, idx + 1, dp);
+
+//         return dp[idx] = Math.max(robThatHouse, notRobThatHouse);
+
+//     }
+
+//     public int rob(int[] nums) {
+//         int n = nums.length;
+//         int[] dp = new int[n + 1];
+//         Arrays.fill(dp, -1);
+
+//         return rob_memo(nums, 0, dp);
+//     }
+
+// }

@@ -8,11 +8,8 @@ class Node
 
 public:
     int data = 0;
-
     vector<Node *> children;
-
     Node(int data)
-
     {
 
         this->data = data;
@@ -47,7 +44,6 @@ Node *constructor01(vector<int> &arr)
     vector<Node *> stack;
 
     stack.push_back(new Node(arr[0]));
-
     Node *root = stack[0];
 
     for (int i = 1; i < arr.size(); i++)
@@ -65,7 +61,6 @@ Node *constructor01(vector<int> &arr)
             node->children.push_back(nnode);
 
             stack.push_back(nnode);
-            
         }
 
         else

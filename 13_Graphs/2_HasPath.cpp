@@ -61,4 +61,59 @@ using namespace std;
           cout<<"false"<<endl;
       }
 
-    }                    
+    }   
+
+
+
+//1971. Find if Path Exists in Graph Leetcode
+
+//     class Edge{
+//     public:
+//     int src;
+//     int nbr;
+//     Edge(int src, int nbr){
+//         this->src = src;
+//         this->nbr = nbr;
+//     }
+// };
+
+// class Solution {
+// public:
+    
+//     bool helper(vector<vector<Edge>>&graph, int src , int dst, vector<bool>&visited){
+//         if(src==dst){
+//             return true;
+//         }
+        
+//         visited[src]=true;
+//         for(Edge e : graph[src]){
+//             if(visited[e.nbr]==false){
+//                 bool check = helper(graph,e.nbr,dst,visited);
+//                 if(check){
+//                     return true;
+//                 }
+//             }
+//         }
+        
+//         return false;
+//     }
+    
+    
+//     bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
+//         vector<vector<Edge>>Graph(n,vector<Edge>());
+//         for(int i=0;i<edges.size();i++){
+//             int src = edges[i][0];
+//             int nbr = edges[i][1];
+            
+//             Graph[src].push_back(Edge(src,nbr));
+//             Graph[nbr].push_back(Edge(nbr,src));
+            
+//         }
+        
+//         vector<bool>visited(n,false);
+//         return helper(Graph,source,destination,visited);
+       
+        
+        
+//     }
+// };                 

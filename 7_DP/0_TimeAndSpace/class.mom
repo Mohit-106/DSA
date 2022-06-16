@@ -1,0 +1,5 @@
+Test the significance  of two correlations coefficient
+
+t = (r-roh)/(root(1-r*r/(n-2)))
+H0: rho = 0
+

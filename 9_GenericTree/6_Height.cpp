@@ -26,7 +26,7 @@ Node *construct(int arr[], int n)
         else
         {
             Node *t = newNode(arr[i]);
-            //t->data=arr[i];
+            // t->data=arr[i];
 
             if (st.size() > 0)
             {
@@ -42,16 +42,29 @@ Node *construct(int arr[], int n)
     return root;
 }
 
-int height(Node *node)
+// int height(Node *node)
+// {
+//     int ht = -1;
+//     for (Node *val : node->children)
+//     {
+//         int cht = height(val);
+//         ht = max(ht, cht);
+//     }
+//     ht = ht + 1;
+//     return ht;
+// }
+
+int height(Node *root)
 {
-    int ht = -1; 
-    for (Node *val : node->children)
+    
+    int ht = -1;
+    for (Node *child : root->children)
     {
-        int cht = height(val);
-        ht = max(ht, cht);
+        int h = height(child);
+        ht = max(h, ht);
     }
-    ht = ht + 1;
-    return ht;
+    return ht + 1;
+
 }
 
 int main()
@@ -65,6 +78,6 @@ int main()
     }
     Node *root = construct(arr, n);
     int h = height(root);
+
     cout << h << endl;
-    
 }
