@@ -16,6 +16,16 @@ public:
         this->wt = wt;
     }
 };
+class Pair{
+    
+    int src;
+    string psf;
+    Pair(int src, string psf){
+        this->src = src;
+        this->psf = psf;
+    }
+
+};
 
 void Hamiltonian(vector<vector<Edge>> &graph, int src, string psf, vector<bool> &vis, int csf, int osrc)
 {
