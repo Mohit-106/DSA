@@ -23,7 +23,7 @@ using namespace std;
         for(Edge ed : graph[src]){
             if(vis[ed.nbr] == false){
                
-                bool check =Haspath(graph , ed.nbr , des , vis );
+                bool check = Haspath(graph , ed.nbr , des , vis );
                 if(check==true){
                     return true;
                 }

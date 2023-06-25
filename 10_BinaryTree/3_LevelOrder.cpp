@@ -98,6 +98,23 @@ void levelOrder2(Node *node)
   }
 }
 
+void levelOrder(Node * node){
+  queue<Node*>q;
+  q.push(node);
+  while(q.size()>0){
+    int count = q.size();
+    for(int i=1; i<=count; i++){
+      Node * top = q.front();
+      cout<<top->data<<" ";
+
+    }
+  }
+
+
+}
+
+
+
 class Pair
 {
 public:

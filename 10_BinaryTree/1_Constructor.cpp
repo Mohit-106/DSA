@@ -26,19 +26,19 @@ int idx = 0;
 
 Node *constructTree(vector<int> &arr)
 {
-    if (idx == arr.size() || arr[idx] == -1)
-    {
 
+    if(idx==arr.size() || arr[idx]==-1){
         idx++;
-        return nullptr;
+        return NULL;
     }
 
-    Node *node = new Node(arr[idx++]);
+    Node * root = new Node(arr[idx]);
+    idx++;
+    root->left = constructTree(arr);
+    root->right = constructTree(arr);
 
-    node->left = constructTree(arr);
-    node->right = constructTree(arr);
+    return root;
 
-    return node;
 }
 
 class Pair

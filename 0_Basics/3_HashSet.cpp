@@ -8,8 +8,6 @@ int main(){
     set.insert("adc");
     set.insert("abc");
     cout<<set.size()<<endl;
-
     //hashSet only store unique values
-
     return 0;
 }

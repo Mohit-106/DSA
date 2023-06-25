@@ -14,15 +14,10 @@ int EncodingsTab2(string str, vector<int> &dp)
         if(ch1!=0){
             dp[i]+=dp[i-1];
         }
-        
-
-    }
-    
+    } 
 }
-
 int EncodingsTab(string str, vector<int> &dp)
 {
-
     for (int i = str.size(); i >= 0; i--)
     {
         if (i == str.size())
@@ -49,10 +44,8 @@ int EncodingsTab(string str, vector<int> &dp)
 
 int main()
 {
-
     string str;
     cin >> str;
     vector<int> dp(str.size() + 1);
     cout << EncodingsTab(str, dp);
-
 }

@@ -1,31 +1,29 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <queue>
 using namespace std;
 
 class Edge
-{  
-
+{
 public:
-  int src = 0; 
-  int nbr = 0;
-  int wt = 0;
+    int src = 0;
+    int nbr = 0;
+    int wt = 0;
 
-  Edge(int src, int nbr, int wt)
-  {
-    this->src = src; 
-    this->nbr = nbr;
-    this->wt = wt;
-  }
-
+    Edge(int src, int nbr, int wt)
+    {
+        this->src = src;
+        this->nbr = nbr;
+        this->wt = wt;
+    }
 };
-
-
 
 class Pair
 {
 
 public:
     int vtx = 0;
-    string psf ="";
+    string psf;
     int wt = 0;
 
     Pair(int vtx, string psf, int wt)
@@ -39,62 +37,51 @@ public:
 class comp
 {
 public:
-    bool operator()(Pair const &a, Pair const &b) const
+    bool operator()(Pair* a, Pair* b) 
     {
-        return a.wt > b.wt;
+        return a->wt > b->wt;
     }
 };
 
- 
- 
+int main()
+{
 
-int main() {                                                                            
- 
-  int vtces;
-  cin >> vtces;
-  vector<vector<Edge>> graph(vtces, vector<Edge>());
-  
+    int vtces;
+    cin >> vtces;
+    vector<vector<Edge>> graph(vtces, vector<Edge>());
+    int edges;
+    cin >> edges;
 
-  int edges;
-  cin >> edges;
+    for (int i = 0; i < edges; i++)
+    {
+        int u, v, w;
+        cin >> u >> v >> w;
 
-  for (int i = 0; i < edges; i++ ) {
-    int u, v, w; 
-    cin >> u >> v >> w; 
- 
-    graph[v].push_back(Edge(u, v, w));
-    graph[u].push_back(Edge(v, u, w));
+        graph[u].push_back(Edge(u, v, w));
+        graph[v].push_back(Edge(v, u, w));
+    }
+    int src;
+    cin>>src;
+    priority_queue<Pair*, vector<Pair*>, comp> pq;
+    pq.push(new Pair(src,to_string(src),0));
+    vector<bool> visited(vtces, false);
 
-  } 
-  int src;  
-  cin >> src;  
-  priority_queue<Pair, vector<Pair>, comp> pq;
-  pq.push(Pair(src,to_string(src), 0));
-  vector<bool> visited(vtces, false);
-
-  while(!pq.empty()){
-
-      Pair rem = pq.top();
+    while (!pq.empty())
+    {
+      Pair * top = pq.top();
       pq.pop();
-      if(visited[rem.vtx]==true){
+      if(visited[top->vtx] == true){
         continue;
       }
-    visited[rem.vtx]=true;
-      cout << rem.vtx << " via " << rem.psf << " @ " << rem.wt << endl;
-      for(Edge e : graph[rem.vtx]){
-          if(visited[e.nbr]==false){
-            pq.push(Pair(e.nbr,rem.psf+ to_string(e.nbr), rem.wt+e.wt));
-          }
+      visited[top->vtx] = true;
+      cout<<top->vtx<<" via "<<top->psf<<" @ "<<top->wt<<endl;
+      for(Edge e : graph[top->vtx]){
+        if(visited[e.nbr]==false){
+          pq.push(new Pair(e.nbr,top->psf+to_string(e.nbr),top->wt+e.wt));
+        }
       }
+      
+    }
 
-
-  }
-
-
-
-
-
-
-  
-  return 0;
+    return 0;
 }

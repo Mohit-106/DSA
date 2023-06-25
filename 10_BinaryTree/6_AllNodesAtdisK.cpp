@@ -34,29 +34,19 @@
         
 //     }
     
-//     void klevelDown(TreeNode* root, int level , TreeNode * blocker, int clevel){
-        
-        
+//     void klevelDown(TreeNode* root, int level , TreeNode * blocker, int clevel){    
 //         if(clevel == level){
 //             ans.push_back(root->val);
 //             return;
-//         }
-        
+//         }       
 //         if(root->left!= blocker && root->left!=NULL){
 //             klevelDown(root->left,level,blocker,clevel+1);
-            
 //         }
 //         if(root->right!=blocker && root->right!=NULL){
 //             klevelDown(root->right,level,blocker,clevel+1);
-            
 //         }
-        
-        
 //     }
-        
-    
 //     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
-        
 //         if(root==NULL){
 //             return ans;
 //         }

@@ -27,6 +27,7 @@ public:
 
 bool iscyclic(vector<vector<Edge>> &graph, int src, vector<bool> &visited)
 {
+    
     if (visited[src] == true)
     {
         return true;
@@ -40,8 +41,6 @@ bool iscyclic(vector<vector<Edge>> &graph, int src, vector<bool> &visited)
         }
     }
 
-    
-    
 }
 
 int main()
